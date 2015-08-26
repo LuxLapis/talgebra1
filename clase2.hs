@@ -14,7 +14,7 @@ signo n | n > 0 = 1
     | n < 0 = -1
 
 
--- calcularel valor absoulto de un numero, usar funcion anterior
+-- calcular el valor absoulto de un numero, usar funcion anterior
 absoluto j = (signo j) * j
 
 -- encontrar el maximo entre dos numeros
@@ -45,7 +45,29 @@ ylogico2 True True = True
 ylogico2 x y = False
 
 
---tarea 1
+--tarea 19/08/2015
 funcionDeTresNs n1 n2 n3
     | n2 < 10 = n1
     | n2 >= 10 = n1 + n3
+
+--funcion nand (x,y) = ¬ (x ^ y)  | && = and, || = or
+nand_equals_nor _ _ = not ( _ && _ ) == not ( _ || _ )
+
+not (2<4) && not (3<6) == not (2<4) || not (3<6)
+
+--este funciona: 
+not ((2<4) && (3<6)) == not ((2<4) || (3<6))
+
+--funcion nor (x,y) = ¬ (x v y)
+nor_equals_nand _ _ = not ( _ || _ ) == not ( _ && _ )
+
+-- a,b,c pertenece a lo numeros reales. Calcular alguna de las raices de la funcion cuadratica
+-- f (x) = ax^2 + bx^2 + c
+
+raiz_negativa a b c = ( (-b) + ( sqrt ( (b^2)  - (4 * a * c) ) ) / (2 * a) )
+raiz_positiva a b c = ( (-b) - ( sqrt ( (b^2)  - (4 * a * c) ) ) / (2 * a) )
+    
+-- es pitagorica con tres parametros a,b,c y diga si existe un triangulo rectangulo donde a y b sean las medidas de los
+-- catetos y c la de la hipotenusa.
+
+esPitagorica a b c = (c^2) == (a^2) + (b^2)
