@@ -71,3 +71,59 @@ esPitagorica a b c = (c^2) == (a^2) + (b^2)
 
 -- calcular la hipotenusa de un triangulo:
 hipotenusa a b = sqrt ( (a^2) + (b^2) ) 
+
+
+----copia ultima clase:
+-- funcion recursiva que calcula un factorial
+fact :: Integer -> Integer
+
+fact n 	| n == 0 = 1
+	| otherwise = n * fact (n-1)
+
+--opcion2
+factorial :: Integer -> Integer
+factorial n | n == 0 = 1
+factorial n | n > 0 = n * factorial (n-1)
+
+-- función recursiva
+-- que calcule la potenica a^n con (n>=0):
+
+potencia :: Float -> Integer -> Float
+
+potencia a n 
+	| n == 0 = 1 
+	| otherwise = a * ( potencia a (n-1))
+
+{-
+EJERCICIO 4
+Escribir una funcion que dado n ∈ Naturales, sume los 
+numeros impares positivos cuyo cuadrado sea menor que n. 
+Por ejemplo:
+sumaImparesCuyoCuadSeaMenorQue 30 -> 1+3+5 -> 9.
+-}
+
+sumaCuadrados x y = (x * x) + (y * y)
+
+
+--sumaImparesCuyoCuadSeaMenorQue n
+--	| (x > o) && (x `mod` 2 == 0) = x + 1
+--	| (y > o) && (y `mod` 2 == 0) = y + 1	
+
+-- Taller: 19.09.2015
+pertenece :: Integer -> [Integer] -> Bool
+pertenece x xs | length xs == 0 = False
+pertenece x xs = head xs == x || pertenece x (tail xs)
+
+
+hayrepetidos :: [Integer] -> Bool
+hayrepetidos l | l == [] = False
+hayrepetidos l = hayrepetidos (tail l) || pertenece (head l) (tail l)
+
+menores :: Integer -> [Integer] -> [Integer]
+menores n lista 
+	| 
+	
+
+
+
+	
